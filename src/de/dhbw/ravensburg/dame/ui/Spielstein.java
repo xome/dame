@@ -29,7 +29,6 @@ public class Spielstein extends JButton {
 		this.setFarbe(farbe);		
 		this.setIcon(drawIcon(farbe));
 		this.setBackground(null);
-		
 	}
 	
 	
