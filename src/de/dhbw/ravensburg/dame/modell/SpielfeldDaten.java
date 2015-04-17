@@ -10,6 +10,9 @@ public class SpielfeldDaten {
 
 	public SpielfeldDaten() {
 
+		feld = new int[8][8];
+		
+		
 		for (int y = 0; y < 8; y++) {
 			for (int x = 0; x < 8; x++) {
 
@@ -19,7 +22,7 @@ public class SpielfeldDaten {
 					} else {
 						setCell(x, y, LEER);
 					}
-				} else if (y == 6 || y == 7 || y == 8) {
+				} else if (y == 6 || y == 7 || y == 5) {
 					if ((x + y) % 2 == 0) {
 						setCell(x, y, WEISS);
 					} else {

@@ -1,9 +1,13 @@
 package de.dhbw.ravensburg.dame.ui;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -26,9 +30,13 @@ public class Spielstein extends JButton {
 	private int farbe;
 
 	public Spielstein(int farbe){
-		this.setFarbe(farbe);		
+		this.setFarbe(farbe);
+		
+		this.setOpaque(false);
+		this.setContentAreaFilled(false);
+		this.setBorderPainted(false);
 		this.setIcon(drawIcon(farbe));
-		this.setBackground(null);
+		this.setPreferredSize(new Dimension(this.getIcon().getIconWidth(), this.getIcon().getIconHeight()));
 	}
 	
 	
