@@ -45,13 +45,14 @@ public class Spielfeld extends JPanel {
 
 			}
 		}
+		
+		refresh();
 
 	}
 	
-	@Override
-	public void paintComponent(Graphics g){
-		super.paintComponent(g);
-		
+	
+	public void refresh(){
+
 		GridBagConstraints c = new GridBagConstraints();
 		
 		
@@ -77,9 +78,7 @@ public class Spielfeld extends JPanel {
 		}
 		
 		
-		revalidate();
 	}
-	
 	
 	
 

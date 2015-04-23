@@ -22,8 +22,10 @@ public class MainFrame extends JFrame {
 		pane.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		
-		pane.add(new Brett(), c);
-		pane.add(new Spielfeld2(), c);
+		
+		pane.add(new Spielfeld(), c);
+//		pane.add(new Brett(), c);
+//		pane.add(new Spielfeld2(), c);
 
 		setSize(pane.getPreferredSize().width + 10,
 				pane.getPreferredSize().height + 30);

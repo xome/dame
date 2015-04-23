@@ -10,8 +10,9 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
-public class Spielstein extends JButton {
+public class Spielstein extends JLabel {
 
 	/**
 	 * 
@@ -30,13 +31,12 @@ public class Spielstein extends JButton {
 	private int farbe;
 
 	public Spielstein(int farbe){
-		this.setFarbe(farbe);
-		
-		this.setOpaque(false);
-		this.setContentAreaFilled(false);
-		this.setBorderPainted(false);
+		this.setFarbe(farbe);		
 		this.setIcon(drawIcon(farbe));
 		this.setPreferredSize(new Dimension(this.getIcon().getIconWidth(), this.getIcon().getIconHeight()));
+		this.setText("Hallo");
+		System.out.println("Spielstein added!");
+		System.out.println(this);
 	}
 	
 	
@@ -45,19 +45,39 @@ public class Spielstein extends JButton {
 		
 		Color color = null;
 		
+		
+		try {
+		
 		if (farbe == WEISS){
-			color = Color.WHITE;
+//			color = Color.WHITE;
+			
+			return new ImageIcon(ImageIO.read(new File("textures" + System.getProperty("file.separator") + "spielstein_weiss.png")));
+			
+			
 		}else if (farbe == SCHWARZ){
-			color = Color.BLACK;
+//			color = Color.GRAY;
+			
+			
+			return new ImageIcon(ImageIO.read(new File("textures" + System.getProperty("file.separator") + "spielstein_schwarz.png")));
+			
+		}
+		
+		} catch (IOException e){
+			e.printStackTrace();
 		}
 		
 		BufferedImage img = new BufferedImage(50, 50, BufferedImage.TYPE_INT_ARGB);
 		
-		Graphics2D g = (Graphics2D) img.getGraphics();
+//		Graphics2D g = (Graphics2D) img.getGraphics();
+//		
+//		g.setColor(color);
+//		g.fillOval(0, 0, 50, 50);
+//		g.dispose();
+//		
 		
-		g.setColor(color);
-		g.fillOval(0, 0, 50, 50);
-		g.dispose();
+		
+		
+		
 		
 		return new ImageIcon(img);
 				
